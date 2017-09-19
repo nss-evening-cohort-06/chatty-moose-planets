@@ -7,3 +7,18 @@
 		"5": "This is the fifth default message."
 	}
 }
+
+
+
+// Commented away for later use in case we go for the timestamps or multi-users stretch goal
+
+// {
+// 	"messages": {
+// 		"1": {
+// 			"User": "username",
+// 			"Time": "time goes here in expected format",
+// 			"Text": "This is the first default message."
+// 		}
+// 	}
+// }
+
