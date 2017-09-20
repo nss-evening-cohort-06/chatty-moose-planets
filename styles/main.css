@@ -6,11 +6,11 @@ body {
 
 
 /* STYLING FOR CHECKBOX EVENTS */
-#dark-theme {
+.dark-theme {
 	background-color: black;
 	color: white;
 }
 
-#large-text {
+.large-text {
 	font-size: 2em;
 }
