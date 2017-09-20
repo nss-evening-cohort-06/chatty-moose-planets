@@ -1,5 +1,6 @@
 "use strict";
 
+
 // ConvertMessageObjectToMessageString :: {} -> ""
 const ConvertMessageObjectToMessageString = (MessageObject) => {
 	let MessageString = "";
@@ -11,4 +12,20 @@ const ConvertMessageObjectToMessageString = (MessageObject) => {
 	domString += `<div> ${message} ${user}<button type="button" class="btn btn-default navbar-btn">Delete</button></div>`;
 
 	return MessageString;
+
+let HtmlArray = [];
+
+// ConvertMessageObjectToMessageString :: {} -> ""
+const ConvertMessageObjectToMessageString = (MessageObject) => {
+	let MessageString;
+
+
+	return MessageString;
+};
+
+// PushMessageStringToArrayAndEnforceMessageLimit :: "" -> [""]
+const PushMessageStringToArrayAndEnforceMessageLimit = (MessageString) => {
+
+	return HtmlArray;
+
 };
