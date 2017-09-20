@@ -13,11 +13,16 @@ const GenerateDomStringFromHtmlArray = (HtmlArray) => {
 	});
 	return domString;
 };
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 const SendArrayToDom = (HtmlArray) => {
 	let BigString = GenerateDomStringFromHtmlArray(HtmlArray);
 	PrintDomStringToDom(BigString);
 };
 
+<<<<<<< HEAD
 module.exports = SendArrayToDom;
 
 
@@ -32,3 +37,6 @@ GenerateDomStringFromHtmlArray();
 
 
 
+=======
+module.exports = SendArrayToDom;
+>>>>>>> master
