@@ -31,10 +31,10 @@ const GenerateDomStringFromHtmlArray = (HtmlArray) => {
 	return DomString;
 };
 
-// PushMessageStringTo
+// 
 
-// ConvertMessageStringToMessageObject :: {} -> ""
-const ConvertMessageStringToMessageObject = (MessageObject) => {
+// ConvertMessageObjectToMessageString :: {} -> ""
+const ConvertMessageObjectToMessageString = (MessageObject) => {
 	let MessageString;
 
 
