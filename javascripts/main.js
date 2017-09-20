@@ -46,3 +46,55 @@ const GenerateMessageObjectOnUserDemand = (event) => {
 	let MessageObject;
 	return MessageObject;
 };
+
+
+//domString
+
+const domString = () => {
+	let domString = "";
+	HtmlArray.forEach((value) => {
+		domString += value;
+	});
+	return domString;
+};
+
+
+domString();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
