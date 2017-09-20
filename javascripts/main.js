@@ -1,6 +1,10 @@
 "use strict";
 
+
+const events = require("./events");
+
 let HtmlArray = [];
+
 
 // JsonLoader :: JSON File -> Object
 const JsonLoader = require("./jsonloader");
@@ -18,6 +22,9 @@ const TestJson = () => {
 };
 
 TestJson();
+
+
+events();
 
 // PrintDomStringToDom :: "" -> DOM
 const PrintDomStringToDom = (DomString) => {
@@ -60,6 +67,7 @@ const domString = () => {
 
 
 domString();
+
 
 
 
