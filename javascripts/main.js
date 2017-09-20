@@ -1,13 +1,16 @@
 "use strict";
 
+// DomExporter :: [HtmlArray] -> DOM
+// Generates a giant string from the contents of the HTML array and puts it in the div
+const DomExporter = require("./dom");
 
+// events - Generates the event listeners
 const events = require("./events");
-
-let HtmlArray = [];
-
 
 // JsonLoader :: JSON File -> Object
 const JsonLoader = require("./jsonloader");
+
+
 
 const JsonLogger = (object) => {
 	console.log(object);
@@ -26,83 +29,14 @@ TestJson();
 
 events();
 
-// PrintDomStringToDom :: "" -> DOM
-const PrintDomStringToDom = (DomString) => {
-
-};
-
-// GenerateDomStringFromHtmlArray :: [""] -> ""
-const GenerateDomStringFromHtmlArray = (HtmlArray) => {
-	let DomString;
-
-	return DomString;
-};
-
 // 
 
-// ConvertMessageObjectToMessageString :: {} -> ""
-const ConvertMessageObjectToMessageString = (MessageObject) => {
-	let MessageString;
 
-
-	return MessageString;
-};
 
 // GenerateMessageObjectOnUserDemand :: DOM state on event -> {}
 const GenerateMessageObjectOnUserDemand = (event) => {
 	let MessageObject;
 	return MessageObject;
 };
-
-
-//domString
-
-const domString = () => {
-	let domString = "";
-	HtmlArray.forEach((value) => {
-		domString += value;
-	});
-	return domString;
-};
-
-
-domString();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
