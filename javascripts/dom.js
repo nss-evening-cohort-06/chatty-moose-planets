@@ -7,9 +7,11 @@ const PrintDomStringToDom = (DomString) => {
 
 // GenerateDomStringFromHtmlArray :: [""] -> ""
 const GenerateDomStringFromHtmlArray = (HtmlArray) => {
-	let DomString;
-
-	return DomString;
+	let domString = "";
+	HtmlArray.forEach((value) => {
+		domString += value;
+	});
+	return domString;
 };
 
 const SendArrayToDom = (HtmlArray) => {
@@ -18,26 +20,3 @@ const SendArrayToDom = (HtmlArray) => {
 };
 
 module.exports = SendArrayToDom;
-
-
-
-// Matt's code
-const domString = (HtmlArray) => {
-	let domString = "";
-	HtmlArray.forEach((value) => {
-		domString += value;
-	});
-	return domString;
-};
-
-
-
-
-domString();
-
-
-
-
-
-
-
