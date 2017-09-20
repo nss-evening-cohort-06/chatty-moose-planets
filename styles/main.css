@@ -1,0 +1,16 @@
+/* GENERAL STYLING */
+body {
+	background-color: ghostwhite;
+}
+
+
+
+/* STYLING FOR CHECKBOX EVENTS */
+#dark-theme {
+	background-color: black;
+	color: white;
+}
+
+#large-text {
+	font-size: 2em;
+}
