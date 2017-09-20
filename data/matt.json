@@ -1,8 +1,7 @@
 {
 	"message": {
-		"User": "John",
+		"User": "Matt",
 		"Time": "time goes here in expected format",
-		"Text": "Hey look guys the JSON loader works!"
+		"Text": "Hey team leader!"
 	}
 }
-
