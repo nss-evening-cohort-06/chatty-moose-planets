@@ -1,6 +1,6 @@
 "use strict";
 
-
+const events = require("./events");
 // JsonLoader :: JSON File -> Object
 const JsonLoader = require("./jsonloader");
 
@@ -17,3 +17,5 @@ const TestJson = () => {
 };
 
 TestJson();
+
+events();
