@@ -3,9 +3,7 @@ let bodyEl = document.getElementById("the-body");
 let darkBox = document.getElementById("dark-theme");
 let selectedBox;
 
-const deleteButton = () => {
-document.body.addEventListener("click", deleteButton);
-};
+
 
 
 const darkEvent = () => {
@@ -21,3 +19,39 @@ const darkEvent = () => {
 };
 
 module.exports = darkEvent;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const deleteButtonListener = () => {
+document.body.addEventListener("click", deleteButton);
+};
+
+const deleteButton = (event) => {
+	
+	if(event.target.id === 'delete'){
+		event.target.parentElement.remove();
+	}
+};
+
+
+
+
