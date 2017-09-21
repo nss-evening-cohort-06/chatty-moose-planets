@@ -40,6 +40,16 @@ const addMessage = () => {
 		});
 	};
 
+const deleteButtonListener = () => {
+document.body.addEventListener("click", deleteButton);
+};
+
+const deleteButton = (event) => {
+	
+	if(event.target.id === 'delete'){
+		event.target.parentElement.remove();
+	}
+};
 
 
 const largeEvent = () => {
@@ -55,6 +65,22 @@ const largeEvent = () => {
 };
 
 
+module.exports = {darkEvent, addMessage, deleteButton};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 
 
@@ -66,16 +92,7 @@ const largeEvent = () => {
 module.exports = {darkEvent, addMessage, largeEvent};
 
 
-const deleteButtonListener = () => {
-document.body.addEventListener("click", deleteButton);
-};
 
-const deleteButton = (event) => {
-	
-	if(event.target.id === 'delete'){
-		event.target.parentElement.remove();
-	}
-};
 
 
 
