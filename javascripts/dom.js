@@ -1,7 +1,16 @@
 "use strict";
 
+let messageBoard = document.getElementById("messageBoard");
+
+
 // PrintDomStringToDom :: "" -> DOM
-const PrintDomStringToDom = (DomString) => {
+const PrintDomStringToDom = (domString) => {
+let clearButton = document.getElementById("clearButton");
+
+clearButton.setAttribut("disabled", "false");
+
+messageBoard.innerHTML = domString;
+
 
 };
 
@@ -13,30 +22,16 @@ const GenerateDomStringFromHtmlArray = (HtmlArray) => {
 	});
 	return domString;
 };
-<<<<<<< HEAD
-=======
 
->>>>>>> master
 const SendArrayToDom = (HtmlArray) => {
 	let BigString = GenerateDomStringFromHtmlArray(HtmlArray);
 	PrintDomStringToDom(BigString);
 };
 
-<<<<<<< HEAD
+
 module.exports = SendArrayToDom;
 
 
 
 
 
-GenerateDomStringFromHtmlArray();
-
-
-
-
-
-
-
-=======
-module.exports = SendArrayToDom;
->>>>>>> master
