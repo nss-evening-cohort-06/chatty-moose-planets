@@ -50,35 +50,11 @@ const addMessage = () => {
 		});
 	};
 
+
 const InitializeEventListeners = () => {
 	addMessage();
 	darkEvent();
 	deleteButtonListener();
 };
 
-
-
 module.exports = InitializeEventListeners;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
