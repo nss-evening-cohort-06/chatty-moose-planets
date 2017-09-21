@@ -9,7 +9,6 @@ let messageInput = document.getElementById("whatever");
 
 
 
-
 const darkEvent = () => {
 	darkBox.addEventListener('change', (event) =>{
 		if(event.target.checked === true){
@@ -21,6 +20,7 @@ const darkEvent = () => {
 		}
 	});
 };
+
 
 const addMessage = () => {
 	messageInput.addEventListener('keypress', (event) => {
@@ -43,3 +43,39 @@ const addMessage = () => {
 
 
 module.exports = {darkEvent, addMessage};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const deleteButtonListener = () => {
+document.body.addEventListener("click", deleteButton);
+};
+
+const deleteButton = (event) => {
+	
+	if(event.target.id === 'delete'){
+		event.target.parentElement.remove();
+	}
+};
+
+
+
