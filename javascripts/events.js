@@ -6,7 +6,6 @@ let selectedBox;
 
 
 
-
 const darkEvent = () => {
 	darkBox.addEventListener('change', (event) =>{
 		if(event.target.checked === true){
@@ -20,3 +19,39 @@ const darkEvent = () => {
 };
 
 module.exports = darkEvent;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const deleteButtonListener = () => {
+document.body.addEventListener("click", deleteButton);
+};
+
+const deleteButton = (event) => {
+	
+	if(event.target.id === 'delete'){
+		event.target.parentElement.remove();
+	}
+};
+
+
+
+

@@ -29,5 +29,9 @@ const SendArrayToDom = (HtmlArray) => {
 };
 
 
-
 module.exports = SendArrayToDom;
+
+
+
+
+
