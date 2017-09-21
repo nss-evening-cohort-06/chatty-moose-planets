@@ -19,3 +19,5 @@ const PushMessageStringToArrayAndEnforceMessageLimit = (MessageString) => {
 	return HtmlArray;
 
 };
+
+module.exports = ConvertMessageObjectToMessageString;

@@ -3,6 +3,7 @@ let bodyEl = document.getElementById("the-body");
 let darkBox = document.getElementById("dark-theme");
 let selectedBox;
 
+let messageInput = document.getElementById("messageInput");
 
 
 
@@ -19,4 +20,17 @@ const darkEvent = () => {
 	});
 };
 
-module.exports = darkEvent;
+const addMessage = () => {
+	messageInput.addEventListener('keypress', (event) => {
+		if(event.keycode === 13) {
+
+
+
+
+		}
+
+	});
+};
+
+
+module.exports = {darkEvent};
