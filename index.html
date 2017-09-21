@@ -8,7 +8,7 @@
 <body id="the-body">
 
 
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" id="nav">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -25,10 +25,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">John</a></li>
+        <li class="dropdown" id="dropdown-user">
+          <a href="#" class="dropdown-toggle" id="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Select User <span class="caret"></span></a>
+          <ul class="dropdown-menu" id="user-list">
+            <li id="list-user"><a href="#">John</a></li>
             <li><a href="#">Matt</a></li>
             <li><a href="#">Brooke</a></li>
             <li><a href="#">Caitlin</a></li>
@@ -81,14 +81,14 @@
 
 
 
-<div id="checkbox-div" class="container-fluid">
+<div id="checkbox-div" class="container-fluid col-md-6">
 	<label class="checkbox-inline"><input type="checkbox" id="dark-theme" value="dark-theme">Dark Theme</label>
 	<label class="checkbox-inline"><input type="checkbox" id="large-text" value="large-text">Large Text</label>
-</div>
+</div><br>
 
 
-<div id="messageHeader">Messages</div>
-  <div id="messageBoard"></div>
+<div id="messageHeader" class="header container-fluid">Messages</div><br>
+  <div id="messageBoard" class="board container-fluid"></div>
 
 
 
