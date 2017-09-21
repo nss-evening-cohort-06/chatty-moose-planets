@@ -1,9 +1,11 @@
 "use strict";
+const main = require("./main");
+
 let bodyEl = document.getElementById("the-body");
 let darkBox = document.getElementById("dark-theme");
 let selectedBox;
 
-let messageInput = document.getElementById("messageInput");
+let messageInput = document.getElementById("whatever");
 
 
 
@@ -23,14 +25,19 @@ const darkEvent = () => {
 const addMessage = () => {
 	messageInput.addEventListener('keypress', (event) => {
 		if(event.keycode === 13) {
+			let messageObject ={
+				"message": {
+					"User": "shit",
+					"Time": "time goes here in expected format",
+					"Text": messageInput.id
+					}
+				};
+				main(messageObject);
+			}
+			
+		});
+	};
 
 
 
-
-		}
-
-	});
-};
-
-
-module.exports = {darkEvent};
+module.exports = darkEvent;

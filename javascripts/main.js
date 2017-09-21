@@ -40,7 +40,7 @@ const GenerateMessageObjectOnUserDemand = (event) => {
 };
 
 
-
+module.exports = TestJson;
 
 
 
