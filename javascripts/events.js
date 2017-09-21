@@ -1,5 +1,5 @@
 "use strict";
-const main = require("./main");
+const jsonLogger = require("./main");
 
 let bodyEl = document.getElementById("the-body");
 let darkBox = document.getElementById("dark-theme");
@@ -24,7 +24,7 @@ const darkEvent = () => {
 
 const addMessage = () => {
 	messageInput.addEventListener('keypress', (event) => {
-		if(event.keycode === 13) {
+		if(event.keyCode === 13) {
 			let messageObject ={
 				"message": {
 					"User": "shit",
@@ -32,7 +32,9 @@ const addMessage = () => {
 					"Text": messageInput.id
 					}
 				};
-				main(messageObject);
+				console.log(jsonLogger);
+				jsonLogger(messageObject);
+	messageInput.value='';
 			}
 			
 		});

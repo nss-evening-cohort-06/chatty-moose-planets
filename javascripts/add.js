@@ -7,8 +7,10 @@ const ConvertMessageObjectToMessageString = (MessageObject) => {
 	let message = MessageObject.message.Text;
 	let user = MessageObject.message.User;
 
-	MessageString += `<div> ${message} ${user}<button type="button" class="btn delete btn-default navbar-btn">Delete</button></div>`;
 
+
+	MessageString += `<div> ${message} ${user}<button type="button" class="btn btn-default navbar-btn">Delete</button></div>`;
+	console.log(MessageString);
 	return MessageString;
 };
 
@@ -20,6 +22,7 @@ const PushMessageStringToArrayAndEnforceMessageLimit = (MessageString) => {
 		HtmlArray.shift();
 	}
 	HtmlArray.push(MessageString);
+	console.log(HtmlArray);
 	return HtmlArray;
 };
 
@@ -28,6 +31,7 @@ const PushMessageStringToArrayAndEnforceMessageLimit = (MessageString) => {
 const InsertNewMessageIntoArray = (MessageObject) => {
 	let NewString = ConvertMessageObjectToMessageString(MessageObject);
 	PushMessageStringToArrayAndEnforceMessageLimit(NewString);
+	console.log(HtmlArray);
 	return HtmlArray;
 };
 
