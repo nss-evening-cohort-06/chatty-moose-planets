@@ -40,4 +40,4 @@ const addMessage = () => {
 
 
 
-module.exports = darkEvent;
+module.exports = {darkEvent, addMessage};

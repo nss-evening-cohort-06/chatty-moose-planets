@@ -27,7 +27,8 @@ const TestJson = () => {
 TestJson();
 
 
-events();
+events.addMessage();
+events.darkEvent();
 
 // 
 
