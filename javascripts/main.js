@@ -33,14 +33,14 @@ const TestJson = () => {
 TestJson();
 
 
-events();
+events.addMessage();
+events.darkEvent();
 
 // 
 
 
 
-
-
+module.exports = JsonLogger;
 
 
 

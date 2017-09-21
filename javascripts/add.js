@@ -7,6 +7,8 @@ const ConvertMessageObjectToMessageString = (MessageObject) => {
 	let message = MessageObject.message.Text;
 	let user = MessageObject.message.User;
 
+
+
 	MessageString += `<div> ${message} ${user}<button type="button" class="btn btn-default navbar-btn">Delete</button></div>`;
 	console.log(MessageString);
 	return MessageString;
@@ -32,5 +34,7 @@ const InsertNewMessageIntoArray = (MessageObject) => {
 	console.log(HtmlArray);
 	return HtmlArray;
 };
+
+
 
 module.exports = InsertNewMessageIntoArray;

@@ -1,8 +1,11 @@
 "use strict";
+const jsonLogger = require("./main");
+
 let bodyEl = document.getElementById("the-body");
 let darkBox = document.getElementById("dark-theme");
 let selectedBox;
 
+let messageInput = document.getElementById("whatever");
 
 
 
@@ -18,7 +21,29 @@ const darkEvent = () => {
 	});
 };
 
-module.exports = darkEvent;
+
+const addMessage = () => {
+	messageInput.addEventListener('keypress', (event) => {
+		if(event.keyCode === 13) {
+			let messageObject ={
+				"message": {
+					"User": "shit",
+					"Time": "time goes here in expected format",
+					"Text": messageInput.id
+					}
+				};
+				console.log(jsonLogger);
+				jsonLogger(messageObject);
+	messageInput.value='';
+			}
+			
+		});
+	};
+
+
+
+module.exports = {darkEvent, addMessage};
+
 
 
 
@@ -51,7 +76,6 @@ const deleteButton = (event) => {
 		event.target.parentElement.remove();
 	}
 };
-
 
 
 
