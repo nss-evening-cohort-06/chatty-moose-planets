@@ -40,32 +40,6 @@ const addMessage = () => {
 		});
 	};
 
-
-
-module.exports = {darkEvent, addMessage};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const deleteButtonListener = () => {
 document.body.addEventListener("click", deleteButton);
 };
@@ -76,6 +50,33 @@ const deleteButton = (event) => {
 		event.target.parentElement.remove();
 	}
 };
+
+
+module.exports = {darkEvent, addMessage, deleteButton};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
