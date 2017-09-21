@@ -5,7 +5,7 @@ const core = require("./core");
 let bodyEl = document.getElementById("the-body");
 let darkBox = document.getElementById("dark-theme");
 let selectedBox;
-
+let largeBox = document.getElementById("large-text");
 let messageInput = document.getElementById("whatever");
 
 
