@@ -1,5 +1,6 @@
 "use strict";
 const jsonLogger = require("./main");
+const core = require("./core");
 
 let bodyEl = document.getElementById("the-body");
 let darkBox = document.getElementById("dark-theme");
@@ -21,6 +22,15 @@ const darkEvent = () => {
 	});
 };
 
+const deleteButtonListener = () => {
+		document.body.addEventListener("click", deleteButton);
+};
+
+const deleteButton = (event) => {
+	if(event.target.id === 'delete'){
+		event.target.parentElement.remove();
+	}
+};
 
 const addMessage = () => {
 	messageInput.addEventListener('keypress', (event) => {
@@ -29,53 +39,46 @@ const addMessage = () => {
 				"message": {
 					"User": "shit",
 					"Time": "time goes here in expected format",
-					"Text": messageInput.id
+					"Text": messageInput.value
 					}
 				};
 				console.log(jsonLogger);
-				jsonLogger(messageObject);
+				core(messageObject);
 	messageInput.value='';
 			}
 			
 		});
 	};
 
-
-
-module.exports = {darkEvent, addMessage};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const deleteButtonListener = () => {
-document.body.addEventListener("click", deleteButton);
+const InitializeEventListeners = () => {
+	addMessage();
+	darkEvent();
+	deleteButtonListener();
 };
 
-const deleteButton = (event) => {
-	
-	if(event.target.id === 'delete'){
-		event.target.parentElement.remove();
-	}
-};
+
+
+module.exports = InitializeEventListeners;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
