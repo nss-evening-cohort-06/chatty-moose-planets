@@ -1,37 +1,34 @@
 "use strict";
 
+const MakeMessageArray = require("./arraymaker");
 
 // ConvertMessageObjectToMessageString :: {} -> ""
+// Takes in our object and converts it to an HTML string
 const ConvertMessageObjectToMessageString = (MessageObject) => {
 	let MessageString = "";
 	let message = MessageObject.message.Text;
 	let user = MessageObject.message.User;
-
-
-
-	MessageString += `<div> ${message} ${user}<button type="button" class="btn btn-default navbar-btn">Delete</button></div>`;
-	console.log(MessageString);
+	MessageString += `<div class="message"> ${message} ${user}<button type="button" class="btn btn-default navbar-btn">Delete</button></div>`;
 	return MessageString;
 };
 
-let HtmlArray = [];
-
 // PushMessageStringToArrayAndEnforceMessageLimit :: "" -> [""]
+// Creates an array of all messages currently in the DOM, removes the first message if there are already 20, and adds the new one to it
 const PushMessageStringToArrayAndEnforceMessageLimit = (MessageString) => {
-	if (HtmlArray.length === 21) {
-		HtmlArray.shift();
+	let currentMessages = document.getElementById("messageBoard").childNodes;
+	if (currentMessages.length === 20) {
+		currentMessages[0].remove();
 	}
+	let HtmlArray = MakeMessageArray(currentMessages);
 	HtmlArray.push(MessageString);
-	console.log(HtmlArray);
 	return HtmlArray;
 };
 
 // InsertNewMessageIntoArray :: {} -> [""]
-// Receives a MessageObject and pushes a string to the array
+// Receives a MessageObject returns an array of all MessageStrings
 const InsertNewMessageIntoArray = (MessageObject) => {
 	let NewString = ConvertMessageObjectToMessageString(MessageObject);
-	PushMessageStringToArrayAndEnforceMessageLimit(NewString);
-	console.log(HtmlArray);
+	let HtmlArray = PushMessageStringToArrayAndEnforceMessageLimit(NewString);
 	return HtmlArray;
 };
 

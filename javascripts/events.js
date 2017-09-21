@@ -1,5 +1,5 @@
 "use strict";
-const jsonLogger = require("./main");
+
 const core = require("./core");
 
 let bodyEl = document.getElementById("the-body");
@@ -42,7 +42,6 @@ const addMessage = () => {
 					"Text": messageInput.value
 					}
 				};
-				console.log(jsonLogger);
 				core(messageObject);
 	messageInput.value='';
 			}
