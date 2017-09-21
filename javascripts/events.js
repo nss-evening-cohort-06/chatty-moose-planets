@@ -1,5 +1,6 @@
 "use strict";
 const jsonLogger = require("./main");
+const core = require("./core");
 
 let bodyEl = document.getElementById("the-body");
 let darkBox = document.getElementById("dark-theme");
@@ -21,6 +22,15 @@ const darkEvent = () => {
 	});
 };
 
+const deleteButtonListener = () => {
+		document.body.addEventListener("click", deleteButton);
+};
+
+const deleteButton = (event) => {
+	if(event.target.id === 'delete'){
+		event.target.parentElement.remove();
+	}
+};
 
 const addMessage = () => {
 	messageInput.addEventListener('keypress', (event) => {
@@ -29,70 +39,22 @@ const addMessage = () => {
 				"message": {
 					"User": "shit",
 					"Time": "time goes here in expected format",
-					"Text": messageInput.id
+					"Text": messageInput.value
 					}
 				};
 				console.log(jsonLogger);
-				jsonLogger(messageObject);
+				core(messageObject);
 	messageInput.value='';
 			}
 			
 		});
 	};
 
-const deleteButtonListener = () => {
-document.body.addEventListener("click", deleteButton);
+
+const InitializeEventListeners = () => {
+	addMessage();
+	darkEvent();
+	deleteButtonListener();
 };
 
-const deleteButton = (event) => {
-	
-	if(event.target.id === 'delete'){
-		event.target.parentElement.remove();
-	}
-};
-
-
-const largeEvent = () => {
-	largeBox.addEventListener('change', (event) => {
-		if(event.target.checked === true){
-			console.log("checked", event);
-			bodyEl.classList.add("class", "large-text");
-		} else if(event.target.checked === false){	
-			console.log("unchecked", event);
-			bodyEl.classList.remove("class", "large-text");
-	  }
-   });
-};
-
-
-module.exports = {darkEvent, addMessage, deleteButton};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-module.exports = {darkEvent, addMessage, largeEvent};
-
-
-
-
-
-
+module.exports = InitializeEventListeners;
