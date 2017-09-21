@@ -11,8 +11,11 @@ const GenerateMessageStringFromDomElement = (Element) => {
 // Takes in an array-like object of HTML elements and returns an array of MessageStrings from their innerHTML
 const GetMessageStringsFromHTMLCollection = (HTMLCollection) => {
   let CollectionArray = Array.from(HTMLCollection);
-  let StringsArray = CollectionArray.map(GenerateMessageStringFromDomElement);
-  return StringsArray;
+  if (CollectionArray.length) {
+    return CollectionArray.map(GenerateMessageStringFromDomElement);
+  } else {
+    return [];
+  }
 };
 
 module.exports = GetMessageStringsFromHTMLCollection;

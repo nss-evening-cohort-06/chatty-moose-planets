@@ -1,5 +1,9 @@
 "use strict";
 
+// MakeMessageArray :: HTMLCollection -> [""] 
+// Generates an array of the HTML all messages currently in the DOM
+const MakeMessageArray = require("./arraymaker");
+
 // DomExporter :: [HtmlArray] -> DOM
 // Generates a giant string from the contents of the HTML array and puts it in the div
 const DomExporter = require("./dom");
@@ -8,11 +12,14 @@ const DomExporter = require("./dom");
 // Takes in an object and returns the array of HTML strings
 const AddNewMessage = require("./add");
 
-// CoreProcess :: 
+// CoreProcess ::
 const CoreProcess = (object) => {
 	console.log(object);
-	let CurrentArray = AddNewMessage(object);
-	DomExporter(CurrentArray);
+	let currentMessages = document.getElementById("messageBoard").childNodes;
+  let oldArray = MakeMessageArray(currentMessages);
+	let NewArray = AddNewMessage(object, oldArray);
+	console.log(typeof NewArray);
+	DomExporter(NewArray);
 };
 
 module.exports = CoreProcess;

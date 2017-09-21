@@ -63,7 +63,7 @@ const InitializeEventListeners = () => {
 
 
 // EnforceMessageLimit
-// Deletes the first message in the DOM if there are X or more, where X is a user selection
+// Deletes the first message in the DOM if there are X or more
 const EnforceMessageLimit = () => {
 	// let MessageLimit = parseInt(document.getElementById("message-limit").innerText);
 	let MessageLimit = 20;
