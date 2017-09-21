@@ -3,8 +3,9 @@ let bodyEl = document.getElementById("the-body");
 let darkBox = document.getElementById("dark-theme");
 let selectedBox;
 
-
-
+const deleteButton = () => {
+document.body.addEventListener("click", deleteButton);
+};
 
 
 const darkEvent = () => {
