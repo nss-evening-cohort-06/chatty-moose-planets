@@ -4,7 +4,7 @@ const jsonLogger = require("./main");
 let bodyEl = document.getElementById("the-body");
 let darkBox = document.getElementById("dark-theme");
 let selectedBox;
-
+let largeBox = document.getElementById("large-text");
 let messageInput = document.getElementById("whatever");
 
 
@@ -52,6 +52,19 @@ const deleteButton = (event) => {
 };
 
 
+const largeEvent = () => {
+	largeBox.addEventListener('change', (event) => {
+		if(event.target.checked === true){
+			console.log("checked", event);
+			bodyEl.classList.add("class", "large-text");
+		} else if(event.target.checked === false){	
+			console.log("unchecked", event);
+			bodyEl.classList.remove("class", "large-text");
+	  }
+   });
+};
+
+
 module.exports = {darkEvent, addMessage, deleteButton};
 
 
@@ -68,12 +81,15 @@ module.exports = {darkEvent, addMessage, deleteButton};
 
 
 
+	
 
 
 
 
 
 
+
+module.exports = {darkEvent, addMessage, largeEvent};
 
 
 
