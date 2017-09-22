@@ -70,7 +70,7 @@ const currentUserSelected = () => {
 		console.log("click", event);
 		let currentUser = event.target.innerText;
 		if (event.target.id !== dropdownToggle) {
-			dropdownToggle.innerHTML = `Sup ${currentUser}`;
+			dropdownToggle.innerHTML = `${currentUser}`;
 
 		}
 	});

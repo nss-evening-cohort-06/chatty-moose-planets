@@ -1,8 +1,15 @@
 /* GENERAL STYLING */
 body {
-	background-color: #D9EDDF;
+	/*background-color: #D9EDDF;*/
+}	
+	
+#brand {
+	color: #75F;
 }
 
+.navbar-default {
+	background-color: white;
+}
 
 
 /* STYLING FOR CHECKBOX EVENTS */
@@ -22,27 +29,30 @@ body {
 #whatever {
 	width: 618px;
 	margin-right: 19px;
+	border-radius: 14px;
 }
 
 /* MESSAGE DIV */
 .board {
-	text-align: center;
+	text-align: left;
 	width: 618px;
 	/*border: 1px solid black;*/
 	height: unset;
 }
 
 .header {
-	font-size: 1.5em;
+	font-size: 2em;
 	float: left;
-	margin-left: -199px;
+	margin-left: -284px;
 }
 
 .message {
 position: relative;
-width: 400px;
-height: 40px;
-padding: 2px;
+word-wrap: break-word;
+padding-left: inherit;
+padding-top: 2px;
+width: auto;
+height: auto;
 background: #00C9D0;
 -webkit-border-radius: 13px;
 -moz-border-radius: 13px;
@@ -65,8 +75,14 @@ left: -14px;
 top: 16px;
 }
 
+.message:hover {
+	opacity: 0.9; 
+}
+
 /* BUTTONS */
 
 .btn {
-	    margin: 1px -12px 5px 14px;
+margin: 1px -12px 5px 14px;
+border-radius: 14px;   
+color: #3a7999;
 }
