@@ -105,6 +105,9 @@ const InitializeEventListeners = () => {
 // Deletes the first message in the DOM if there are X or more
 const EnforceMessageLimit = () => {
 	let MessageLimit = parseInt(document.getElementById("message-limit").innerText);
+	if (isNaN(MessageLimit)) {
+		MessageLimit = 20;
+	}
 	let Messages = document.getElementById("messageBoard").childNodes;
 	while (Messages.length > MessageLimit) {
 		Messages[0].remove();
