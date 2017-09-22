@@ -47,6 +47,7 @@ background: #00C9D0;
 -moz-border-radius: 13px;
 border-radius: 13px;
 margin: 9px;
+box-shadow: 2px 2px 1px ghostwhite;
 }
 
 .message:after 
