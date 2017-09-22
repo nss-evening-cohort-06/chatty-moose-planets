@@ -1,24 +1,19 @@
 "use strict";
 
-// MakeMessageArray :: HTMLCollection -> [""] 
-// Generates an array of the HTML all messages currently in the DOM
-const MakeMessageArray = require("./arraymaker");
-
-// DomExporter :: [HtmlArray] -> DOM
-// Generates a giant string from the contents of the HTML array and puts it in the div
+// DomExporter :: MessageString -> DOM
+// Attaches a string to the specified DOM element
 const DomExporter = require("./dom");
 
-// AddNewMessage :: {} -> [""]
+// ConvertMessage :: Object -> String
 // Takes in an object and returns the array of HTML strings
-const AddNewMessage = require("./add");
+const ConvertMessage = require("./object-to-string");
 
-// CoreProcess ::
-const CoreProcess = (object) => {
-	console.log(object);
-	let currentMessages = document.getElementById("messageBoard").childNodes;
-  let oldArray = MakeMessageArray(currentMessages);
-	let NewArray = AddNewMessage(object, oldArray);
-	DomExporter(NewArray);
+// CoreProcess :: Converts an object into an HTML string and prints it to the DOM
+const CoreProcess = (MessageObject) => {
+	console.log(MessageObject);
+	let MessageBoard = document.getElementById("messageBoard");
+	let MessageString = ConvertMessage(MessageObject);
+	DomExporter(MessageString, MessageBoard);
 };
 
 module.exports = CoreProcess;

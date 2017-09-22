@@ -29,7 +29,7 @@ const deleteButtonListener = () => {
 };
 
 const deleteButton = (event) => {
-	if (event.target.id === 'delete') {
+	if (event.target.classList.contains("deletebtn")) {
 		event.target.parentElement.remove();
 	}
 };
@@ -85,7 +85,8 @@ const ChangeMessageLimit = () => {
 	if(event.target.id !== dropdownToggleMsg) {
 		dropdownToggleMsg.innerHTML = `${currentLimit}`;
 	}
-  });
+	EnforceMessageLimit();	
+	});
 };
 
 
@@ -93,7 +94,6 @@ const InitializeEventListeners = () => {
 	addMessage();
 	darkEvent();
 	deleteButtonListener();
-
 	largeEvent();
 	currentUserSelected();
 	ChangeMessageLimit();
@@ -104,12 +104,11 @@ const InitializeEventListeners = () => {
 // EnforceMessageLimit
 // Deletes the first message in the DOM if there are X or more
 const EnforceMessageLimit = () => {
-	let messageLimit = parseInt(document.getElementById("message-limit").innerText);
-	let MessageLimit = 20;
+	let MessageLimit = parseInt(document.getElementById("message-limit").innerText);
 	let Messages = document.getElementById("messageBoard").childNodes;
 	while (Messages.length > MessageLimit) {
 		Messages[0].remove();
 	}
-
 };
+
 module.exports = InitializeEventListeners;
