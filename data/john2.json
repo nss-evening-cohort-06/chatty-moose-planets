@@ -1,0 +1,7 @@
+{
+  "message": {
+    "User": "John",
+    "Time": "time goes here in expected format",
+    "Text": "...for multiple files!"
+  }
+}

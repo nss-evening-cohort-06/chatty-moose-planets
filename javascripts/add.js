@@ -1,40 +1,21 @@
 "use strict";
 
-
 // ConvertMessageObjectToMessageString :: {} -> ""
+// Takes in our object and converts it to an HTML string
 const ConvertMessageObjectToMessageString = (MessageObject) => {
 	let MessageString = "";
 	let message = MessageObject.message.Text;
 	let user = MessageObject.message.User;
-
-
-
-	MessageString += `<div> ${message} ${user}<button type="button" class="btn btn-default navbar-btn">Delete</button></div>`;
-	console.log(MessageString);
+	MessageString += `<div class="message"> ${message} ${user}<button type="button" class="btn btn-default navbar-btn">Delete</button></div>`;
 	return MessageString;
 };
 
-let HtmlArray = [];
-
-// PushMessageStringToArrayAndEnforceMessageLimit :: "" -> [""]
-const PushMessageStringToArrayAndEnforceMessageLimit = (MessageString) => {
-	if (HtmlArray.length === 21) {
-		HtmlArray.shift();
-	}
-	HtmlArray.push(MessageString);
-	console.log(HtmlArray);
-	return HtmlArray;
+// InsertNewMessageIntoArray :: {} + [""] -> [""]
+// Receives a MessageObject and a MessageArray and returns the array with a new message in it
+const InsertNewMessageIntoArray = (MessageObject, oldArray) => {
+	let MessageString = ConvertMessageObjectToMessageString(MessageObject);
+	oldArray.push(MessageString);
+	return oldArray;
 };
-
-// InsertNewMessageIntoArray :: {} -> [""]
-// Receives a MessageObject and pushes a string to the array
-const InsertNewMessageIntoArray = (MessageObject) => {
-	let NewString = ConvertMessageObjectToMessageString(MessageObject);
-	PushMessageStringToArrayAndEnforceMessageLimit(NewString);
-	console.log(HtmlArray);
-	return HtmlArray;
-};
-
-
 
 module.exports = InsertNewMessageIntoArray;
