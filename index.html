@@ -31,12 +31,23 @@
             <li id="list-user"><a href="#">John</a></li>
             <li><a href="#">Matt</a></li>
             <li><a href="#">Brooke</a></li>
-            <li><a href="#">Caitlin</a></li>
-            
+            <li><a href="#">Caitlin</a></li>  
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-left">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+        <li class="dropdown-msglimit" id="message-limit">
+          <a href="#" class="dropdown-toggle" id="dropdown-toggle-msg" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Message Limit <span class="caret"></span></a>
+          <ul class="dropdown-menu" id="msglimit-list">
+            <li id="msg-limit"><a href="#">20</a></li>
+            <li><a href="#">15</a></li>
+            <li><a href="#">10</a></li>
+            <li><a href="#">5</a></li>
+          </ul>
+        </li>
+      </ul>
+        <form class="navbar-form navbar-left">
         <div class="form-group">
           <input type="text" id="whatever" class="form-control" placeholder="Enter Message">
         </div>
@@ -64,30 +75,13 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div id="checkbox-div" class="container-fluid col-md-6">
 	<label class="checkbox-inline"><input type="checkbox" id="dark-theme" value="dark-theme">Dark Theme</label>
 	<label class="checkbox-inline"><input type="checkbox" id="large-text" value="large-text">Large Text</label>
 </div><br>
 
 
-<div id="messageHeader" class="header container-fluid">Messages</div><br>
+<div id="messageHeader" class="header">Check Your Messages</div><br><br>
   <div id="messageBoard" class="board container-fluid"></div>
 
 
