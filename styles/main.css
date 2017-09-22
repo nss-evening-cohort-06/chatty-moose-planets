@@ -1,6 +1,6 @@
 /* GENERAL STYLING */
 body {
-	background-color: ghostwhite;
+	background-color: #D9EDDF;
 }
 
 
@@ -9,17 +9,30 @@ body {
 .dark-theme {
 	background-color: black;
 	color: white;
+
 }
+
 
 .large-text {
 	font-size: 2em;
 }
 
 
-
-
 /* NAVBAR */
 #whatever {
 	width: 618px;
 	margin-right: 19px;
+}
+
+/* MESSAGE DIV */
+.board {
+	text-align: center;
+	width: 618px;
+	border: 1px solid black;
+	height: unset;
+}
+
+.header {
+	font-size: 1.5em;
+
 }
