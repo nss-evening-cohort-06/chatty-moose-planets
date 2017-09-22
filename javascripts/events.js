@@ -9,7 +9,7 @@ let largeBox = document.getElementById("large-text");
 let messageInput = document.getElementById("whatever");
 let currentUserDropdown = document.getElementById("dropdown-user");
 let user = document.getElementById("user-list");
-
+let dropdownToggleMsg = document.getElementById("dropdown-toggle-msg");
 const darkEvent = () => {
 
 	darkBox.addEventListener('change', (event) => {
@@ -79,7 +79,13 @@ const currentUserSelected = () => {
 
 const ChangeMessageLimit = () => {
 	let MessageLimitSelector = document.getElementById("message-limit");
-	MessageLimitSelector.addEventListener("change", EnforceMessageLimit);
+	MessageLimitSelector.addEventListener('click', (event) => {
+	/*console.log("click", event);*/
+	let currentLimit = event.target.innerText;
+	if(event.target.id !== dropdownToggleMsg) {
+		dropdownToggleMsg.innerHTML = `${currentLimit}`;
+	}
+  });
 };
 
 
@@ -90,15 +96,15 @@ const InitializeEventListeners = () => {
 
 	largeEvent();
 	currentUserSelected();
-
 	ChangeMessageLimit();
+	EnforceMessageLimit();
 };
 
 
 // EnforceMessageLimit
 // Deletes the first message in the DOM if there are X or more
 const EnforceMessageLimit = () => {
-	// let MessageLimit = parseInt(document.getElementById("message-limit").innerText);
+	let messageLimit = parseInt(document.getElementById("message-limit").innerText);
 	let MessageLimit = 20;
 	let Messages = document.getElementById("messageBoard").childNodes;
 	while (Messages.length > MessageLimit) {
