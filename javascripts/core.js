@@ -18,7 +18,6 @@ const CoreProcess = (object) => {
 	let currentMessages = document.getElementById("messageBoard").childNodes;
   let oldArray = MakeMessageArray(currentMessages);
 	let NewArray = AddNewMessage(object, oldArray);
-	console.log(typeof NewArray);
 	DomExporter(NewArray);
 };
 
