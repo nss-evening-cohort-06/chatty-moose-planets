@@ -13,112 +13,153 @@ let messageInput = document.getElementById("whatever");
 let currentUserDropdown = document.getElementById("dropdown-user");
 let user = document.getElementById("user-list");
 let dropdownToggleMsg = document.getElementById("dropdown-toggle-msg");
+
+
 const darkEvent = () => {
 
-	darkBox.addEventListener('change', (event) => {
-		if (event.target.checked === true) {
-			navbarEl.classList.add("class", "dark-theme");
-			console.log("checked", event);
-			bodyEl.classList.add("class", "dark-theme");
-		} else if (event.target.checked === false) {
-			navbarEl.classList.remove("class", "dark-theme");
-			bodyEl.classList.remove("class", "dark-theme");
-		}
-	});
+    darkBox.addEventListener('change', (event) => {
+        if (event.target.checked === true) {
+            navbarEl.classList.add("class", "dark-theme");
+            console.log("checked", event);
+            bodyEl.classList.add("class", "dark-theme");
+        } else if (event.target.checked === false) {
+            navbarEl.classList.remove("class", "dark-theme");
+            bodyEl.classList.remove("class", "dark-theme");
+        }
+    });
 };
 
 const deleteButtonListener = () => {
-	document.body.addEventListener("click", deleteButton);
+    document.body.addEventListener("click", deleteButton);
 };
 
 const deleteButton = (event) => {
-	if (event.target.classList.contains("deletebtn")) {
-		Backlog.DeleteMessage(event.target.parentElement.innerHTML);
-		event.target.parentElement.remove();
-	}
-	EnforceMessageLimit();
+    if (event.target.classList.contains("deletebtn")) {
+        Backlog.DeleteMessage(event.target.parentElement.innerHTML);
+        event.target.parentElement.remove();
+    }
+    EnforceMessageLimit();
 };
 
 const addMessage = () => {
-	messageInput.addEventListener('keypress', (event) => {
-		if (event.keyCode === 13) {
-			let person = document.getElementById("dropdown-toggle").innerHTML;
-			let messageObject = {
-				"message": {
-					"User": person,
-					"Time": "time goes here in expected format",
-					"Text": messageInput.value
-				}
-			};
-			console.log(messageObject);
-			core(messageObject);
-			messageInput.value = '';
-			EnforceMessageLimit();
-		}
-	});
+    messageInput.addEventListener('keypress', (event) => {
+        if (event.keyCode === 13) {
+            let person = document.getElementById("dropdown-toggle").innerHTML;
+            let messageObject = {
+                "message": {
+                    "User": person,
+                    "Time": "time goes here in expected format",
+                    "Text": messageInput.value
+                }
+            };
+            console.log(messageObject);
+            core(messageObject);
+            messageInput.value = '';
+            EnforceMessageLimit();
+        }
+    });
 };
 
 const largeEvent = () => {
-	largeBox.addEventListener('change', (event) => {
-		if (event.target.checked === true) {
-			console.log("checked", event);
-			bodyEl.classList.add("class", "large-text");
-		} else if (event.target.checked === false) {
-			console.log("unchecked", event);
-			bodyEl.classList.remove("class", "large-text");
-		}
-	});
+    largeBox.addEventListener('change', (event) => {
+        if (event.target.checked === true) {
+            console.log("checked", event);
+            bodyEl.classList.add("class", "large-text");
+        } else if (event.target.checked === false) {
+            console.log("unchecked", event);
+            bodyEl.classList.remove("class", "large-text");
+        }
+    });
 };
 
 
 const currentUserSelected = () => {
-	user.addEventListener('click', (event) => {
-		console.log("click", event);
-		let currentUser = event.target.innerText;
-		if (event.target.id !== dropdownToggle) {
-			dropdownToggle.innerHTML = `${currentUser}`;
-		}
-	});
+    user.addEventListener('click', (event) => {
+        console.log("click", event);
+        let currentUser = event.target.innerText;
+        if (event.target.id !== dropdownToggle) {
+            dropdownToggle.innerHTML = `${currentUser}`;
+        }
+    });
 };
 
 
 const ChangeMessageLimit = () => {
-	let MessageLimitSelector = document.getElementById("message-limit");
-	MessageLimitSelector.addEventListener('click', (event) => {
-	/*console.log("click", event);*/
-	let currentLimit = event.target.innerText;
-	if(event.target.id !== dropdownToggleMsg) {
-		dropdownToggleMsg.innerHTML = `${currentLimit}`;
-	}
-	
-	EnforceMessageLimit();	
-	});
+    let MessageLimitSelector = document.getElementById("message-limit");
+    MessageLimitSelector.addEventListener('click', (event) => {
+        /*console.log("click", event);*/
+        let currentLimit = event.target.innerText;
+        if (event.target.id !== dropdownToggleMsg) {
+            dropdownToggleMsg.innerHTML = `${currentLimit}`;
+        }
+
+        EnforceMessageLimit();
+    });
 };
 
 
 const InitializeEventListeners = () => {
-	addMessage();
-	darkEvent();
-	deleteButtonListener();
-	largeEvent();
-	currentUserSelected();
-	ChangeMessageLimit();
-	EnforceMessageLimit();
+    addMessage();
+    darkEvent();
+    deleteButtonListener();
+    largeEvent();
+    currentUserSelected();
+    ChangeMessageLimit();
+    EnforceMessageLimit();
+    MessageEditor();
 };
 
 
 // EnforceMessageLimit
 // Deletes the first message in the DOM if there are X or more
 const EnforceMessageLimit = () => {
-	let MessageLimit = parseInt(document.getElementById("message-limit").innerText);
-	if (isNaN(MessageLimit)) {
-		MessageLimit = 20;
-	}
-	let Messages = document.getElementById("messageBoard").childNodes;
-	dom(Backlog.GetBacklog(MessageLimit));
-	while (Messages.length > MessageLimit) {
-	Messages[0].remove();
-	}
+    let MessageLimit = parseInt(document.getElementById("message-limit").innerText);
+    if (isNaN(MessageLimit)) {
+        MessageLimit = 20;
+    }
+    let Messages = document.getElementById("messageBoard").childNodes;
+    dom(Backlog.GetBacklog(MessageLimit));
+    while (Messages.length > MessageLimit) {
+        Messages[0].remove();
+    }
 };
 
-module.exports = InitializeEventListeners;
+
+
+const EditMessage = (e) => {
+        if (e.target.classList.contains("editButton")) {
+                let MessageText = window.prompt("Edit Message", e.target.parentElement.innerText);
+                e.target.parentElement.innerText = MessageText;
+            }
+        };
+
+        const MessageEditor = () => {
+            document.body.addEventListener("click", EditMessage);
+        };
+
+        module.exports = InitializeEventListeners;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
