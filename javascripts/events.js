@@ -35,7 +35,7 @@ const deleteButtonListener = () => {
 
 const deleteButton = (event) => {
     if (event.target.classList.contains("deletebtn")) {
-        Backlog.DeleteMessage(event.target.parentElement.innerHTML);
+        Backlog.DeleteMessage(event.target.parentElement.firstElementChild.innerHTML);
         event.target.parentElement.remove();
     }
     EnforceMessageLimit();
