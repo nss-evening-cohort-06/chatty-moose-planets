@@ -42,26 +42,10 @@ const deleteButton = (event) => {
 };
 
 const addMessage = () => {
-    messageInput.addEventListener('keypress', (event) => {
-        if (event.keyCode === 13) {
-            let person = document.getElementById("dropdown-toggle").innerHTML;
-            let messageObject = {
-                "message": {
-                    "User": person,
-                    "Time": "time goes here in expected format",
-                    "Text": messageInput.value
-                }
-            };
-            console.log(messageObject);
-            core(messageObject);
-            messageInput.value = '';
-            EnforceMessageLimit();
-        }
-    });
 	messageInput.addEventListener('keypress', (event) => {
 		if (event.keyCode === 13) {
 			let personSelection = document.getElementById("dropdown-toggle").innerHTML;
-			let person = "Anonymous";
+			let person = `<img src ="./styles/blank.png">Anonymous`;
 			if (personSelection.includes("Select User") === false) {
 				person = personSelection;
 			}
