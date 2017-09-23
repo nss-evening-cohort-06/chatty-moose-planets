@@ -1,11 +1,11 @@
 "use strict";
 
-// events - Generates the event listeners
-const events = require("./events");
+// InitializeEventListeners - Generates the event listeners
+const InitializeEventListeners = require("./events");
 
 // GenerateInitialMessagesFromJson :: JSON File -> MessageObject
 const GenerateInitialMessagesFromJson = require("./jsonloader");
 
 GenerateInitialMessagesFromJson();
 
-events();
+InitializeEventListeners();
