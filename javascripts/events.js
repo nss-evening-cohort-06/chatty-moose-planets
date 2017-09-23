@@ -1,6 +1,9 @@
 "use strict";
 
 const core = require("./core");
+const Backlog = require("./backlog");
+const dom = require("./dom");
+
 let navbarEl = document.getElementById("nav");
 let bodyEl = document.getElementById("the-body");
 let darkBox = document.getElementById("dark-theme");
@@ -30,8 +33,10 @@ const deleteButtonListener = () => {
 
 const deleteButton = (event) => {
 	if (event.target.classList.contains("deletebtn")) {
+		Backlog.DeleteMessage(event.target.parentElement.innerHTML);
 		event.target.parentElement.remove();
 	}
+	EnforceMessageLimit();
 };
 
 const addMessage = () => {
@@ -85,6 +90,7 @@ const ChangeMessageLimit = () => {
 	if(event.target.id !== dropdownToggleMsg) {
 		dropdownToggleMsg.innerHTML = `${currentLimit}`;
 	}
+	
 	EnforceMessageLimit();	
 	});
 };
@@ -109,8 +115,9 @@ const EnforceMessageLimit = () => {
 		MessageLimit = 20;
 	}
 	let Messages = document.getElementById("messageBoard").childNodes;
+	dom(Backlog.GetBacklog(MessageLimit));
 	while (Messages.length > MessageLimit) {
-		Messages[0].remove();
+	Messages[0].remove();
 	}
 };
 
