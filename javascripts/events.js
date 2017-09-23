@@ -43,10 +43,11 @@ const addMessage = () => {
 	messageInput.addEventListener('keypress', (event) => {
 		if (event.keyCode === 13) {
 			let person = document.getElementById("dropdown-toggle").innerHTML;
+			let pic = document.getElementsByTagName("img");
 			let messageObject = {
 				"message": {
 					"User": person,
-					"Time": "time goes here in expected format",
+					"Time": Date(),
 					"Text": messageInput.value
 				}
 			};
@@ -74,7 +75,7 @@ const largeEvent = () => {
 const currentUserSelected = () => {
 	user.addEventListener('click', (event) => {
 		console.log("click", event);
-		let currentUser = event.target.innerText;
+		let currentUser = event.target.innerHTML;
 		if (event.target.id !== dropdownToggle) {
 			dropdownToggle.innerHTML = `${currentUser}`;
 		}
