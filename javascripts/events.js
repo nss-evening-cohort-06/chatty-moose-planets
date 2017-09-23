@@ -77,6 +77,7 @@ const addMessage = () => {
 			console.log(messageObject);
 			core(messageObject);
 			messageInput.value = '';
+
 			EnforceMessageLimit();
 		}
 	});
