@@ -42,9 +42,10 @@ const deleteButton = (event) => {
 const addMessage = () => {
 	messageInput.addEventListener('keypress', (event) => {
 		if (event.keyCode === 13) {
+			let person = document.getElementById("dropdown-toggle").innerHTML;
 			let messageObject = {
 				"message": {
-					"User": "shit",
+					"User": person,
 					"Time": "time goes here in expected format",
 					"Text": messageInput.value
 				}
@@ -76,7 +77,6 @@ const currentUserSelected = () => {
 		let currentUser = event.target.innerText;
 		if (event.target.id !== dropdownToggle) {
 			dropdownToggle.innerHTML = `${currentUser}`;
-
 		}
 	});
 };
