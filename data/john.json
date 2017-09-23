@@ -1,7 +1,7 @@
 {
 	"message": {
-		"User": "John",
-		"Time": "time goes here in expected format",
+		"User": "<img src ='./styles/johnavatar.jpeg'> John",
+		"Time": "[3:43:05 PM]",
 		"Text": "Hey look guys the JSON loader works!"
 	}
 }
