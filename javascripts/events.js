@@ -156,9 +156,13 @@ const EnforceMessageLimit = () => {
 
 
 const EditMessage = (e) => {
+	    document.getElementById("whatever").focus();
         if (e.target.classList.contains("editButton")) {
-                let MessageText = window.prompt("Edit Message", e.target.parentElement.innerText);
-                e.target.parentElement.innerText = MessageText;
+                let MessageText = e.target.parentElement.firstElementChild.innerHTML;
+                console.log("messagetext", MessageText);
+                let inputBox = `<input name="editbox" type="text" class="messageEdit">`;
+                e.target.parentElement.firstElementChild.innerHTML = inputBox;
+                console.log(e.target.parentElement.firstElementChild);
             }
         };
 
