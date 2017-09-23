@@ -9,7 +9,7 @@ const ConvertMessageObjectToMessageString = (MessageObject) => {
 	let message = MessageObject.message.Text;
 	let user = MessageObject.message.User;
 	let time = MessageObject.message.Time;
-	MessageString += `<div class="message"> ${message} ${user} ${time}<button id="delete-${MessageId}" type="button" class="deletebtn btn btn-default navbar-btn">Delete</button></div>`;
+	MessageString += `<div class="message"> ${user} ${message} ${time}<button id="delete-${MessageId}" type="button" class="deletebtn btn btn-default navbar-btn">Delete</button></div>`;
 	return MessageString;
 };
 
