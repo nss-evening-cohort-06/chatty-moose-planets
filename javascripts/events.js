@@ -155,6 +155,17 @@ const EditMessage = (e) => {
             document.body.addEventListener("click", EditMessage);
         };
 
+
+
+const clearEvent = () => {
+
+};
+
+
+const clearMessages = () => {
+
+};
+
         module.exports = InitializeEventListeners;
 
 
