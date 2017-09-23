@@ -36,8 +36,6 @@ body {
 /* MESSAGE DIV */
 .board {
 	text-align: left;
-	width: 618px;
-	/*border: 1px solid black;*/
 	height: unset;
 }
 
@@ -48,6 +46,8 @@ body {
 }
 
 .message {
+/*display: flex;
+justify-content: space-around;*/
 position: relative;
 word-wrap: break-word;
 padding-left: inherit;
@@ -62,8 +62,12 @@ margin: 9px;
 box-shadow: 2px 2px 1px ghostwhite;
 }
 
-.message:after 
-{
+/*.message > *{
+	display: block;
+	
+}
+*/
+.message:after {
 content: '';
 position: absolute;
 border-style: solid;
@@ -95,11 +99,18 @@ top: 16px;
 /* BUTTONS */
 
 .btn {
-margin: 1px -12px 5px 14px;
-border-radius: 14px;   
-color: #3a7999;
+	margin-right: 5px;
+	border-radius: 14px;   
+	color: #3a7999;
 }
 
+/*.deletebtn {
+	margin-right: 5px;
+	border-radius: 14px;   
+	color: #3a7999;
+
+}*/
+/* AVATARS */
 
 img {
 	max-height: 25px;
