@@ -58,6 +58,23 @@ const addMessage = () => {
             EnforceMessageLimit();
         }
     });
+	messageInput.addEventListener('keypress', (event) => {
+		if (event.keyCode === 13) {
+			let person = document.getElementById("dropdown-toggle").innerHTML;
+			let pic = document.getElementsByTagName("img");
+			let messageObject = {
+				"message": {
+					"User": person,
+					"Time": Date(),
+					"Text": messageInput.value
+				}
+			};
+			console.log(messageObject);
+			core(messageObject);
+			messageInput.value = '';
+			EnforceMessageLimit();
+		}
+	});
 };
 
 const largeEvent = () => {
@@ -81,6 +98,13 @@ const currentUserSelected = () => {
             dropdownToggle.innerHTML = `${currentUser}`;
         }
     });
+	user.addEventListener('click', (event) => {
+		console.log("click", event);
+		let currentUser = event.target.innerHTML;
+		if (event.target.id !== dropdownToggle) {
+			dropdownToggle.innerHTML = `${currentUser}`;
+		}
+	});
 };
 
 
