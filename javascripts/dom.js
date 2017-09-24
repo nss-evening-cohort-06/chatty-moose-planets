@@ -3,14 +3,14 @@
 let messageBoard = document.getElementById("messageBoard");
 
 
-// PrintDomStringToDom ::
+// PrintDomStringToDom :: String -> DOM
 const PrintDomStringToDom = (domString) => {
 	let clearButton = document.getElementById("clearButton");
 	clearButton.setAttribute("disabled", "false");
 	messageBoard.innerHTML = domString;
 };
 
-// GenerateDomStringFromHtmlArray :: [""] -> ""
+// GenerateDomStringFromHtmlArray :: [String] -> String
 const GenerateDomStringFromHtmlArray = (HtmlArray) => {
 	let domString = "";
 	HtmlArray.forEach((value) => {
