@@ -1,7 +1,7 @@
 "use strict";
 let MessageId = 0;
 
-// ConvertMessageObjectToMessageString :: {} -> ""
+// ConvertMessageObjectToMessageString :: Object -> String
 // Takes in our object and converts it to an HTML string
 const ConvertMessageObjectToMessageString = (MessageObject) => {
 	MessageId++;

@@ -3,7 +3,7 @@
 let messageBoard = document.getElementById("messageBoard");
 
 
-// PrintDomStringToDom :: "" -> DOM
+// PrintDomStringToDom ::
 const PrintDomStringToDom = (domString) => {
 	let clearButton = document.getElementById("clearButton");
 	clearButton.setAttribute("disabled", "false");

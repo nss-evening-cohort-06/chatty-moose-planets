@@ -2,7 +2,8 @@
 
 let backlog = [];
 
-// AddNewMessage :: Pushes a new string to the array and returns the backlog
+// AddNewMessage :: "" -> [""]
+// Pushes a new string to the backlog array and returns the backlog
 const AddNewMessage = (MessageString) => {
   backlog.push(MessageString);
   while (backlog.length >= 101) {
@@ -12,7 +13,9 @@ const AddNewMessage = (MessageString) => {
 };
 
 
-// GetBacklog :: Returns the last X elements of the backlog, where X is the message limit.
+// GetBacklog :: # -> [""]
+// Returns the last X elements of the backlog, where X is the message limit. 
+// Returns the entire backlog if its length is less than X
 const GetBacklog = (MessageLimit) => {
   if (backlog.length < MessageLimit) {
     return backlog;
@@ -21,10 +24,9 @@ const GetBacklog = (MessageLimit) => {
   }  
 };
 
-// DeleteMessage :: Removes elements that include the given string from the backlog array and returns the backlog.
+// DeleteMessage :: "" -> [""]
+// Removes any messages in the backlog array that include the provided string
 const DeleteMessage = (RemovedId) => {
-  console.log(backlog);
-  console.log(typeof RemovedId, RemovedId);
   backlog = backlog.filter(string => string.includes(RemovedId) === false);
   return backlog;
 };

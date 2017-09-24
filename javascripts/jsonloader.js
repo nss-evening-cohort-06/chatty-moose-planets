@@ -2,7 +2,7 @@
 
 const core = require("./core");
 
-// JSON -> Object
+// "filename" -> Object
 const JsonLoader = (file) => {
 	return new Promise((resolve, reject) => {
 		var jsonLoader = new XMLHttpRequest();
@@ -24,11 +24,11 @@ const SendEachObjectToCore = (ObjectArray) => {
 	ObjectArray.forEach(core);
 };
 
-// GenerateJsonMessages :: [JSON] -> Objects
+// GenerateJsonMessages :: ["filename"] -> Objects
 const GenerateJsonMessages = () => {
 	const jsonFiles = ["matt", "caitlin", "brooke", "john", "john2"];
 
-	// [jsonFile] -> either err oldObject
+	
 	let getJsonObjectsPromise = Promise.all(jsonFiles.map((jsonFile) => JsonLoader(jsonFile)))
 		.then(SendEachObjectToCore);
 	};
