@@ -5,7 +5,7 @@ let backlog = [];
 // AddNewMessage :: Pushes a new string to the array and returns the backlog
 const AddNewMessage = (MessageString) => {
   backlog.push(MessageString);
-  if (backlog.length === 21) {
+  while (backlog.length >= 101) {
     backlog.shift();
   }
   return backlog;
@@ -21,7 +21,7 @@ const GetBacklog = (MessageLimit) => {
   }  
 };
 
-// DeleteMessage :: Removes a string from the backlog array and returns the backlog.
+// DeleteMessage :: Removes elements that include the given string from the backlog array and returns the backlog.
 const DeleteMessage = (RemovedId) => {
   console.log(backlog);
   console.log(typeof RemovedId, RemovedId);
