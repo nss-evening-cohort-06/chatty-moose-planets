@@ -35,7 +35,7 @@ const deleteButtonListener = () => {
 
 const deleteButton = (event) => {
     if (event.target.classList.contains("deletebtn")) {
-        Backlog.DeleteMessage(event.target.parentElement.firstElementChild.innerHTML);
+        Backlog.DeleteMessage(event.target.parentElement.lastElementChild.innerHTML);
         event.target.parentElement.remove();
     }
     EnforceMessageLimit();
@@ -43,13 +43,14 @@ const deleteButton = (event) => {
 
 const addMessage = () => {
 	messageInput.addEventListener('keypress', (event) => {
-		if (event.keyCode === 13) {
+		if (event.keyCode === 13 && messageInput.value != "") {
 			let personSelection = document.getElementById("dropdown-toggle").innerHTML;
-			let person = `<img src ="./styles/blank.png">Anonymous`;
+			let person = ``;
 			if (personSelection.includes("Select User") === false) {
 				person = personSelection;
-			}
-			let pic = document.getElementsByTagName("img");
+            } else {
+                person = `<img src="./styles/blank.png">Anonymous`;
+            }
 			let time = new Date();
 			let messageObject = {
 				"message": {
@@ -58,10 +59,8 @@ const addMessage = () => {
 					"Text": messageInput.value
 				}
 			};
-			console.log(messageObject);
 			core(messageObject);
 			messageInput.value = '';
-
 			EnforceMessageLimit();
 		}
 	});
