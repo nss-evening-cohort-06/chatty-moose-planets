@@ -13,6 +13,7 @@ let messageInput = document.getElementById("whatever");
 let currentUserDropdown = document.getElementById("dropdown-user");
 let user = document.getElementById("user-list");
 let dropdownToggleMsg = document.getElementById("dropdown-toggle-msg");
+let clearButton = document.getElementById("clearButton");
 
 
 const darkEvent = () => {
@@ -105,7 +106,6 @@ const currentUserSelected = () => {
     });
 };
 
-let clearButton = document.getElementById("clearButton");
 
 
 const disableButton = () => {
@@ -131,7 +131,6 @@ const ChangeMessageLimit = () => {
     });
 };
 
-
 const InitializeEventListeners = () => {
     addMessage();
     darkEvent();
@@ -140,7 +139,11 @@ const InitializeEventListeners = () => {
     currentUserSelected();
     ChangeMessageLimit();
     disableButton();
+    // deleteMessagesOkay();
     EnforceMessageLimit();
+    clearMessages();
+    clearEvent();
+    // MessageEditor();
 };
 
 
@@ -157,6 +160,34 @@ const EnforceMessageLimit = () => {
         Messages[0].remove();
     }
 };
+
+
+
+// const EditMessage = (e) => {
+//     if (e.target.classList.contains("editButton")) {
+//         let MessageText = e.target.parentElement.firstElementChild.innerHTML;
+//         console.log("messagetext", MessageText);
+//         let inputBox = `<input name="editbox" type="text" class="messageEdit">`;
+//         e.target.parentElement.firstElementChild.innerHTML = inputBox;
+//         console.log(e.target.parentElement.firstElementChild);
+//     }
+// };
+
+// const MessageEditor = () => {
+//     document.body.addEventListener("click", EditMessage);
+// };
+
+const clearEvent = () => {
+	document.body.addEventListener("click", clearMessages);
+};
+
+const clearMessages = (e) => {
+	let messageBoard = document.getElementById("messageBoard");
+	Backlog.ClearBacklog();
+	EnforceMessageLimit();
+	messageBoard.innerHTML = "";
+};
+
 
 module.exports = { InitializeEventListeners, EnforceMessageLimit };
 
