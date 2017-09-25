@@ -138,7 +138,6 @@ const InitializeEventListeners = () => {
     currentUserSelected();
     ChangeMessageLimit();
     disableButton();
-    deleteMessagesOkay();
     EnforceMessageLimit();
     // MessageEditor();
 };
