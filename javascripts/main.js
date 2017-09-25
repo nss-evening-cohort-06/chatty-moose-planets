@@ -1,11 +1,13 @@
 "use strict";
 
-// InitializeEventListeners - Generates the event listeners
-const InitializeEventListeners = require("./events");
+// Events - for generating the event listeners
+const Events = require("./events");
 
 // GenerateInitialMessagesFromJson :: JSON File -> MessageObject
 const GenerateInitialMessagesFromJson = require("./jsonloader");
 
 GenerateInitialMessagesFromJson();
 
-InitializeEventListeners();
+Events.InitializeEventListeners();
+
+Events.EnforceMessageLimit();
