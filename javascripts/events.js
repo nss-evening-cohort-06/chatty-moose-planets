@@ -144,7 +144,6 @@ const InitializeEventListeners = () => {
     clearMessages();
     clearEvent();
     // MessageEditor();
-    EnforceMessageLimit();
 };
 
 
