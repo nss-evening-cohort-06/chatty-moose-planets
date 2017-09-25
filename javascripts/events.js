@@ -139,15 +139,12 @@ const InitializeEventListeners = () => {
     currentUserSelected();
     ChangeMessageLimit();
     disableButton();
-<<<<<<< HEAD
     // deleteMessagesOkay();
     EnforceMessageLimit();
     clearMessages();
     clearEvent();
     // MessageEditor();
-=======
     EnforceMessageLimit();
->>>>>>> 2952c5cc7b500f4a0ebc4ba736bf7b2c84b9df10
 };
 
 
@@ -165,7 +162,6 @@ const EnforceMessageLimit = () => {
     }
 };
 
-<<<<<<< HEAD
 
 
 // const EditMessage = (e) => {
@@ -194,8 +190,6 @@ const clearMessages = (e) => {
 };
 
 
-=======
->>>>>>> 2952c5cc7b500f4a0ebc4ba736bf7b2c84b9df10
 module.exports = { InitializeEventListeners, EnforceMessageLimit };
 
 
