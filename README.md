@@ -2,8 +2,9 @@
 
 ## Group Calaberation project 
 
-#### Screen Shot
+#### Screenshot Gif
 
+[]()
 
 #### Contributers
 * Matt Hensley [GitHub](https://github.com/Matthensley777)
@@ -45,6 +46,9 @@
 #### Bonus Items completed
 
 
-#### Sample Coade
-
-
+#### How To Pull Down
+* pull down project (git clone)
+* ```cd into lib folder``` 
+* ```npm init```
+* ```npm install grunt grunt-contrib-jshint matchdep grunt-contrib-watch grunt-browserify jshint-stylish --save-dev```
+* ```type in grunt```
