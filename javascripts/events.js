@@ -42,9 +42,11 @@ const Button = (event) => {
         let MessageID = event.target.parentElement.lastElementChild.innerHTML;
         let MessageText = event.target.parentElement.firstElementChild.nextElementSibling.innerText;
         let EditedMessage = window.prompt("Edit Message: ", MessageText);
-        event.target.parentElement.firstElementChild.nextElementSibling.innerHTML = EditedMessage;
-        let NewMessageString = `<div class="message row col-md-4">${event.target.parentElement.innerHTML}</div>`;
-        Backlog.EditMessage(MessageID, NewMessageString);
+        if (EditedMessage.length > 0) {
+            event.target.parentElement.firstElementChild.nextElementSibling.innerHTML = EditedMessage;
+            let NewMessageString = `<div class="message row col-md-4">${event.target.parentElement.innerHTML}</div>`;
+            Backlog.EditMessage(MessageID, NewMessageString);
+        }    
     }
     EnforceMessageLimit();
 };
@@ -137,11 +139,15 @@ const InitializeEventListeners = () => {
     currentUserSelected();
     ChangeMessageLimit();
     disableButton();
+<<<<<<< HEAD
     // deleteMessagesOkay();
     EnforceMessageLimit();
     clearMessages();
     clearEvent();
     // MessageEditor();
+=======
+    EnforceMessageLimit();
+>>>>>>> 2952c5cc7b500f4a0ebc4ba736bf7b2c84b9df10
 };
 
 
@@ -159,6 +165,7 @@ const EnforceMessageLimit = () => {
     }
 };
 
+<<<<<<< HEAD
 
 
 // const EditMessage = (e) => {
@@ -187,6 +194,8 @@ const clearMessages = (e) => {
 };
 
 
+=======
+>>>>>>> 2952c5cc7b500f4a0ebc4ba736bf7b2c84b9df10
 module.exports = { InitializeEventListeners, EnforceMessageLimit };
 
 
