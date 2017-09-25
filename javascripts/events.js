@@ -29,41 +29,48 @@ const darkEvent = () => {
     });
 };
 
-const deleteButtonListener = () => {
-    document.body.addEventListener("click", deleteButton);
+const ButtonListener = () => {
+    document.body.addEventListener("click", Button);
 };
 
-const deleteButton = (event) => {
+const Button = (event) => {
     if (event.target.classList.contains("deletebtn")) {
         Backlog.DeleteMessage(event.target.parentElement.lastElementChild.innerHTML);
         event.target.parentElement.remove();
+    } else if (event.target.classList.contains("editButton")) {
+        let MessageID = event.target.parentElement.lastElementChild.innerHTML;
+        let MessageText = event.target.parentElement.firstElementChild.nextElementSibling.innerText;
+        let EditedMessage = window.prompt("Edit Message: ", MessageText);
+        event.target.parentElement.firstElementChild.nextElementSibling.innerHTML = EditedMessage;
+        let NewMessageString = `<div class="message row col-md-4">${event.target.parentElement.innerHTML}</div>`;
+        Backlog.EditMessage(MessageID, NewMessageString);
     }
     EnforceMessageLimit();
 };
 
 const addMessage = () => {
-	messageInput.addEventListener('keypress', (event) => {
-		if (event.keyCode === 13 && messageInput.value != "") {
-			let personSelection = document.getElementById("dropdown-toggle").innerHTML;
-			let person = ``;
-			if (personSelection.includes("Select User") === false) {
-				person = personSelection;
+    messageInput.addEventListener('keypress', (event) => {
+        if (event.keyCode === 13 && messageInput.value != "") {
+            let personSelection = document.getElementById("dropdown-toggle").innerHTML;
+            let person = ``;
+            if (personSelection.includes("Select User") === false) {
+                person = personSelection;
             } else {
                 person = `<img src="./styles/blank.png">Anonymous`;
             }
-			let time = new Date();
-			let messageObject = {
-				"message": {
-					"User": person,
-					"Time": time.toLocaleTimeString(),
-					"Text": messageInput.value
-				}
-			};
-			core(messageObject);
-			messageInput.value = '';
-			EnforceMessageLimit();
-		}
-	});
+            let time = new Date();
+            let messageObject = {
+                "message": {
+                    "User": person,
+                    "Time": time.toLocaleTimeString(),
+                    "Text": messageInput.value
+                }
+            };
+            core(messageObject);
+            messageInput.value = '';
+            EnforceMessageLimit();
+        }
+    });
 };
 
 const largeEvent = () => {
@@ -87,13 +94,13 @@ const currentUserSelected = () => {
             dropdownToggle.innerHTML = `${currentUser}`;
         }
     });
-	user.addEventListener('click', (event) => {
-		console.log("click", event);
-		let currentUser = event.target.innerHTML;
-		if (event.target.id !== dropdownToggle) {
-			dropdownToggle.innerHTML = `${currentUser}`;
-		}
-	});
+    user.addEventListener('click', (event) => {
+        console.log("click", event);
+        let currentUser = event.target.innerHTML;
+        if (event.target.id !== dropdownToggle) {
+            dropdownToggle.innerHTML = `${currentUser}`;
+        }
+    });
 };
 
 
@@ -114,12 +121,12 @@ const ChangeMessageLimit = () => {
 const InitializeEventListeners = () => {
     addMessage();
     darkEvent();
-    deleteButtonListener();
+    ButtonListener();
     largeEvent();
     currentUserSelected();
     ChangeMessageLimit();
     EnforceMessageLimit();
-    MessageEditor();
+    // MessageEditor();
 };
 
 
@@ -139,22 +146,21 @@ const EnforceMessageLimit = () => {
 
 
 
-const EditMessage = (e) => {
-	    document.getElementById("whatever").focus();
-        if (e.target.classList.contains("editButton")) {
-                let MessageText = e.target.parentElement.firstElementChild.innerHTML;
-                console.log("messagetext", MessageText);
-                let inputBox = `<input name="editbox" type="text" class="messageEdit">`;
-                e.target.parentElement.firstElementChild.innerHTML = inputBox;
-                console.log(e.target.parentElement.firstElementChild);
-            }
-        };
+// const EditMessage = (e) => {
+//     if (e.target.classList.contains("editButton")) {
+//         let MessageText = e.target.parentElement.firstElementChild.innerHTML;
+//         console.log("messagetext", MessageText);
+//         let inputBox = `<input name="editbox" type="text" class="messageEdit">`;
+//         e.target.parentElement.firstElementChild.innerHTML = inputBox;
+//         console.log(e.target.parentElement.firstElementChild);
+//     }
+// };
 
-        const MessageEditor = () => {
-            document.body.addEventListener("click", EditMessage);
-        };
+// const MessageEditor = () => {
+//     document.body.addEventListener("click", EditMessage);
+// };
 
-        module.exports = InitializeEventListeners;
+module.exports = { InitializeEventListeners, EnforceMessageLimit };
 
 
 

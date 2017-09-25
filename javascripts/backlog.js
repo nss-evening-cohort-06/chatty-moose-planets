@@ -2,14 +2,13 @@
 
 let backlog = [];
 
-// AddNewMessage :: String -> [String]
-// Pushes a new string to the backlog array and returns the backlog
+// AddNewMessage :: String
+// Pushes a new string to the backlog array
 const AddNewMessage = (MessageString) => {
   backlog.push(MessageString);
   while (backlog.length >= 101) {
     backlog.shift();
   }
-  return backlog;
 };
 
 
@@ -24,11 +23,23 @@ const GetBacklog = (MessageLimit) => {
   }  
 };
 
-// DeleteMessage :: String -> [String]
+// DeleteMessage :: String
 // Removes any messages in the backlog array that include the provided string (usually the invisible message ID)
 const DeleteMessage = (RemovedId) => {
   backlog = backlog.filter(string => string.includes(RemovedId) === false);
-  return backlog;
 };
 
-module.exports = { AddNewMessage, GetBacklog, DeleteMessage };
+// EditMessage :: String, String
+// Finds the array index where the value contains the provided MessageID string and replaces the value with the provided NewMessage string
+const EditMessage = (MessageID, NewMessage) => {
+  let MessageIndex = backlog.findIndex(string => string.includes(MessageID));
+  backlog[MessageIndex] = NewMessage;
+};
+
+// ClearBacklog
+const ClearBacklog = () => {
+  backlog = [];
+};
+
+
+module.exports = { AddNewMessage, GetBacklog, DeleteMessage, EditMessage, ClearBacklog };
