@@ -22,6 +22,7 @@ const JsonLoader = (file) => {
 };
 
 const SendEachObjectToCore = (ObjectArray) => {
+	console.log(ObjectArray);
 	ObjectArray.forEach(core);
 };
 
