@@ -46,7 +46,7 @@ const Button = (event) => {
             event.target.parentElement.firstElementChild.nextElementSibling.innerHTML = EditedMessage;
             let NewMessageString = `<div class="message row col-md-4">${event.target.parentElement.innerHTML}</div>`;
             Backlog.EditMessage(MessageID, NewMessageString);
-        }    
+        }
     }
     EnforceMessageLimit();
 };
@@ -110,11 +110,11 @@ const currentUserSelected = () => {
 
 const disableButton = () => {
     clearButton.addEventListener('mouseover', (event) => {
-    let messageBox = document.getElementById("messageBoard");
-    if(messageBox.children.length < 1) {
-        clearButton.disabled = true;
-    }
-  });
+        let messageBox = document.getElementById("messageBoard");
+        if (messageBox.children.length < 1) {
+            clearButton.disabled = true;
+        }
+    });
 };
 
 
@@ -162,30 +162,17 @@ const EnforceMessageLimit = () => {
 };
 
 
-
-// const EditMessage = (e) => {
-//     if (e.target.classList.contains("editButton")) {
-//         let MessageText = e.target.parentElement.firstElementChild.innerHTML;
-//         console.log("messagetext", MessageText);
-//         let inputBox = `<input name="editbox" type="text" class="messageEdit">`;
-//         e.target.parentElement.firstElementChild.innerHTML = inputBox;
-//         console.log(e.target.parentElement.firstElementChild);
-//     }
-// };
-
-// const MessageEditor = () => {
-//     document.body.addEventListener("click", EditMessage);
-// };
-
 const clearEvent = () => {
-	document.body.addEventListener("click", clearMessages);
+    document.body.addEventListener("click", clearMessages);
 };
 
 const clearMessages = (e) => {
-	let messageBoard = document.getElementById("messageBoard");
-	Backlog.ClearBacklog();
-	EnforceMessageLimit();
-	messageBoard.innerHTML = "";
+    if (e.target.id == "clearButton") {
+        let messageBoard = document.getElementById("messageBoard");
+        Backlog.ClearBacklog();
+        EnforceMessageLimit();
+        messageBoard.innerHTML = "";
+    }    
 };
 
 
