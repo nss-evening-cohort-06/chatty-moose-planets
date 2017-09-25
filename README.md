@@ -1,12 +1,12 @@
 # Chatty Moose
 
-## Group Calaberation project 
+## Group Calibration project 
 
 #### Screenshot Gif
 
 ![demo](https://user-images.githubusercontent.com/30091921/30835704-2f04e636-a21f-11e7-8536-c1cad7a057df.gif) (727kB)
 
-#### Contributers
+#### Contributors
 * Matt Hensley [GitHub](https://github.com/Matthensley777)
 * John Achor [GitHub](https://github.com/johnachor)
 * Caitlin Murnick [GitHub](https://github.com/cmurnick)
@@ -44,9 +44,9 @@
 
 #### Bonus Items completed
 * Ability to edit existing messages
-* Mulitple JSON files
+* Multiple JSON files
 * Each message has a time stamp
-* Mulitple users
+* Multiple users
 * Message limits
 
 #### How To Pull Down
