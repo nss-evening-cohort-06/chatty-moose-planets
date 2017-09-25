@@ -96,6 +96,18 @@ const currentUserSelected = () => {
 	});
 };
 
+let clearButton = document.getElementById("clearButton");
+
+
+const disableButton = () => {
+    clearButton.addEventListener('mouseover', (event) => {
+    let messageBox = document.getElementById("messageBoard");
+    if(messageBox.children.length < 1) {
+        clearButton.disabled = true;
+    }
+  });
+};
+
 
 const ChangeMessageLimit = () => {
     let MessageLimitSelector = document.getElementById("message-limit");
@@ -118,6 +130,8 @@ const InitializeEventListeners = () => {
     largeEvent();
     currentUserSelected();
     ChangeMessageLimit();
+    disableButton();
+    deleteMessagesOkay();
     EnforceMessageLimit();
     MessageEditor();
 };
