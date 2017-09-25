@@ -13,6 +13,7 @@ let messageInput = document.getElementById("whatever");
 let currentUserDropdown = document.getElementById("dropdown-user");
 let user = document.getElementById("user-list");
 let dropdownToggleMsg = document.getElementById("dropdown-toggle-msg");
+let clearButton = document.getElementById("clearButton");
 
 
 const darkEvent = () => {
@@ -121,6 +122,7 @@ const InitializeEventListeners = () => {
     ChangeMessageLimit();
     EnforceMessageLimit();
     MessageEditor();
+    PrintDomStringToDom();
 };
 
 
@@ -155,16 +157,15 @@ const EditMessage = (e) => {
             document.body.addEventListener("click", EditMessage);
         };
 
-
-
 const clearEvent = () => {
-
+	clearButton.addEventListener("click", PrintDomStringToDom);
 };
 
 
-const clearMessages = () => {
-
-};
+// const clearMessages = (e) => {
+// 	let messageBoard = document.getElementById("messageBoard");
+// 	messageBoard.innerHTML = document.getElementById("messageBoard").value = "";
+// };
 
         module.exports = InitializeEventListeners;
 
