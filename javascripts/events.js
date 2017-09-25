@@ -13,6 +13,7 @@ let messageInput = document.getElementById("whatever");
 let currentUserDropdown = document.getElementById("dropdown-user");
 let user = document.getElementById("user-list");
 let dropdownToggleMsg = document.getElementById("dropdown-toggle-msg");
+let clearButton = document.getElementById("clearButton");
 
 
 const darkEvent = () => {
@@ -105,7 +106,6 @@ const currentUserSelected = () => {
     });
 };
 
-let clearButton = document.getElementById("clearButton");
 
 
 const disableButton = () => {
@@ -131,7 +131,6 @@ const ChangeMessageLimit = () => {
     });
 };
 
-
 const InitializeEventListeners = () => {
     addMessage();
     darkEvent();
@@ -140,7 +139,11 @@ const InitializeEventListeners = () => {
     currentUserSelected();
     ChangeMessageLimit();
     disableButton();
+    // deleteMessagesOkay();
     EnforceMessageLimit();
+    clearMessages();
+    clearEvent();
+    // MessageEditor();
 };
 
 
@@ -158,6 +161,7 @@ const EnforceMessageLimit = () => {
     }
 };
 
+
 const clearEvent = () => {
     document.body.addEventListener("click", clearMessages);
 };
@@ -170,6 +174,7 @@ const clearMessages = (e) => {
         messageBoard.innerHTML = "";
     }    
 };
+
 
 module.exports = { InitializeEventListeners, EnforceMessageLimit };
 
