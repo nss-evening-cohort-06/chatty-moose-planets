@@ -9,7 +9,7 @@ const ConvertMessageObjectToMessageString = (MessageObject) => {
 	let message = MessageObject.message.Text;
 	let user = MessageObject.message.User;
 	let time = MessageObject.message.Time;
-	MessageString += `<div class="message row col-md-4">${user} posted at ${time}<div class="editableText">${message}</div>
+	MessageString += `<div class="message row col-md-4">${user} (${time}):<div class="editableText">${message}</div>
 	<button class="editButton btn btn-default navbar-btn">Edit</button><button type="button" class="deletebtn btn btn-default navbar-btn">Delete</button><messageID class="invisible">ID: ${MessageId}msg</messageID></div>`;
 	return MessageString;
 };
