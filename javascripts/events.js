@@ -178,7 +178,7 @@ const EnforceMessageLimit = () => {
 // };
 
 const clearEvent = () => {
-	document.body.addEventListener("click", clearMessages);
+	clearButton.addEventListener("click", clearMessages);
 };
 
 const clearMessages = (e) => {
