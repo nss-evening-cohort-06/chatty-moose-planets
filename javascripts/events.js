@@ -104,7 +104,6 @@ const currentUserSelected = () => {
     });
 };
 
-let clearButton = document.getElementById("clearButton");
 
 
 const disableButton = () => {
@@ -130,7 +129,6 @@ const ChangeMessageLimit = () => {
     });
 };
 
-
 const InitializeEventListeners = () => {
     addMessage();
     darkEvent();
@@ -139,10 +137,10 @@ const InitializeEventListeners = () => {
     currentUserSelected();
     ChangeMessageLimit();
     disableButton();
-    deleteMessagesOkay();
+    // deleteMessagesOkay();
     EnforceMessageLimit();
-    MessageEditor();
-    PrintDomStringToDom();
+    clearMessages();
+    clearEvent();
     // MessageEditor();
 };
 
@@ -178,14 +176,15 @@ const EnforceMessageLimit = () => {
 // };
 
 const clearEvent = () => {
-	clearButton.addEventListener("click", PrintDomStringToDom);
+	document.body.addEventListener("click", clearMessages);
 };
 
-
-// const clearMessages = (e) => {
-// 	let messageBoard = document.getElementById("messageBoard");
-// 	messageBoard.innerHTML = document.getElementById("messageBoard").value = "";
-// };
+const clearMessages = (e) => {
+	let messageBoard = document.getElementById("messageBoard");
+	Backlog.ClearBacklog();
+	EnforceMessageLimit();
+	messageBoard.innerHTML = "";
+};
 
 
 module.exports = { InitializeEventListeners, EnforceMessageLimit };

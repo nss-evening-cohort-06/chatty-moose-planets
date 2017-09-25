@@ -6,7 +6,6 @@ let messageBoard = document.getElementById("messageBoard");
 // PrintDomStringToDom :: String -> DOM
 const PrintDomStringToDom = (domString) => {
 	let clearButton = document.getElementById("clearButton");
-	clearButton.removeAttribute("disabled", "False");
 	clearButton.setAttribute("enabled", "false");
 	messageBoard.innerHTML = domString;
 };
