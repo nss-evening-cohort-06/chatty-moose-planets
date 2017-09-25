@@ -1,7 +1,7 @@
 {
 	"message": {
-		"User": "Brooke",
-		"Time": "time goes here in expected format",
+		"User": "<img src = './styles/brookeavatar.jpeg'>Brooke",
+		"Time": "10:59:44 AM",
 		"Text": "Way to make the CSS look beautiful"
 	}
 }

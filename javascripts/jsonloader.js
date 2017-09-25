@@ -2,7 +2,8 @@
 
 const core = require("./core");
 
-// JSON -> Object
+// String -> Object
+// Looks in the data folder for a JSON file of the given name and returns a parsed object
 const JsonLoader = (file) => {
 	return new Promise((resolve, reject) => {
 		var jsonLoader = new XMLHttpRequest();
@@ -21,14 +22,15 @@ const JsonLoader = (file) => {
 };
 
 const SendEachObjectToCore = (ObjectArray) => {
+	console.log(ObjectArray);
 	ObjectArray.forEach(core);
 };
 
-// GenerateJsonMessages :: [JSON] -> Objects
+// GenerateJsonMessages :: [String] -> [Object] -> Core Process
 const GenerateJsonMessages = () => {
 	const jsonFiles = ["matt", "caitlin", "brooke", "john", "john2"];
 
-	// [jsonFile] -> either err oldObject
+	
 	let getJsonObjectsPromise = Promise.all(jsonFiles.map((jsonFile) => JsonLoader(jsonFile)))
 		.then(SendEachObjectToCore);
 	};

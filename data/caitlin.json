@@ -1,7 +1,7 @@
 {
 	"message": {
-		"User": "Caitlin",
-		"Time": "time goes here in expected format",
+		"User": "<img src='./styles/bullyavatar.jpeg'>Caitlin",
+		"Time": "10:54:09 AM",
 		"Text": "Navbar works!"
 	}
 }

@@ -3,19 +3,22 @@
 let messageBoard = document.getElementById("messageBoard");
 
 
-// PrintDomStringToDom :: "" -> DOM
+// PrintDomStringToDom :: String -> DOM
 const PrintDomStringToDom = (domString) => {
 	let clearButton = document.getElementById("clearButton");
 	clearButton.removeAttribute("disabled", "False");
+	clearButton.setAttribute("enabled", "false");
 	messageBoard.innerHTML = domString;
 };
 
-// GenerateDomStringFromHtmlArray :: [""] -> ""
+// GenerateDomStringFromHtmlArray :: [String] -> String
 const GenerateDomStringFromHtmlArray = (HtmlArray) => {
 	let domString = "";
-	HtmlArray.forEach((value) => {
-		domString += value;
-	});
+	if (HtmlArray != []) {
+		HtmlArray.forEach((value) => {
+			domString += value;
+		});
+	}
 	return domString;
 };
 
