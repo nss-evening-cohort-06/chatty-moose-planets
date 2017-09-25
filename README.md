@@ -4,7 +4,7 @@
 
 #### Screenshot Gif
 
-[]()
+![demo](https://user-images.githubusercontent.com/30091921/30835704-2f04e636-a21f-11e7-8536-c1cad7a057df.gif) (727kB)
 
 #### Contributers
 * Matt Hensley [GitHub](https://github.com/Matthensley777)
@@ -13,7 +13,6 @@
 * Brooke Lewis [GitHub](https://github.com/belv2c)
 
 #### Requirements Of Project
-
 * Use Bootstrap
 * Complete 1 of the bonus items
 * Balanced github contributions
@@ -44,7 +43,11 @@
 * When the delete button next to a message is clicked, only that message should be removed from the DOM.
 
 #### Bonus Items completed
-
+* Ability to edit existing messages
+* Mulitple JSON files
+* Each message has a time stamp
+* Mulitple users
+* Message limits
 
 #### How To Pull Down
 * pull down project (git clone)
