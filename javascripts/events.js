@@ -45,7 +45,7 @@ const Button = (event) => {
             event.target.parentElement.firstElementChild.nextElementSibling.innerHTML = EditedMessage;
             let NewMessageString = `<div class="message row col-md-4">${event.target.parentElement.innerHTML}</div>`;
             Backlog.EditMessage(MessageID, NewMessageString);
-        }    
+        }
     }
     EnforceMessageLimit();
 };
@@ -110,11 +110,11 @@ let clearButton = document.getElementById("clearButton");
 
 const disableButton = () => {
     clearButton.addEventListener('mouseover', (event) => {
-    let messageBox = document.getElementById("messageBoard");
-    if(messageBox.children.length < 1) {
-        clearButton.disabled = true;
-    }
-  });
+        let messageBox = document.getElementById("messageBoard");
+        if (messageBox.children.length < 1) {
+            clearButton.disabled = true;
+        }
+    });
 };
 
 
@@ -156,6 +156,19 @@ const EnforceMessageLimit = () => {
     while (Messages.length > MessageLimit) {
         Messages[0].remove();
     }
+};
+
+const clearEvent = () => {
+    document.body.addEventListener("click", clearMessages);
+};
+
+const clearMessages = (e) => {
+    if (e.target.id == "clearButton") {
+        let messageBoard = document.getElementById("messageBoard");
+        Backlog.ClearBacklog();
+        EnforceMessageLimit();
+        messageBoard.innerHTML = "";
+    }    
 };
 
 module.exports = { InitializeEventListeners, EnforceMessageLimit };
