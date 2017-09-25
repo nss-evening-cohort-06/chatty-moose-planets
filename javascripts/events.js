@@ -46,7 +46,7 @@ const Button = (event) => {
             event.target.parentElement.firstElementChild.nextElementSibling.innerHTML = EditedMessage;
             let NewMessageString = `<div class="message row col-md-4">${event.target.parentElement.innerHTML}</div>`;
             Backlog.EditMessage(MessageID, NewMessageString);
-        }    
+        }
     }
     EnforceMessageLimit();
 };
@@ -92,13 +92,6 @@ const largeEvent = () => {
 const currentUserSelected = () => {
     user.addEventListener('click', (event) => {
         console.log("click", event);
-        let currentUser = event.target.innerText;
-        if (event.target.id !== dropdownToggle) {
-            dropdownToggle.innerHTML = `${currentUser}`;
-        }
-    });
-    user.addEventListener('click', (event) => {
-        console.log("click", event);
         let currentUser = event.target.innerHTML;
         if (event.target.id !== dropdownToggle) {
             dropdownToggle.innerHTML = `${currentUser}`;
@@ -110,11 +103,11 @@ const currentUserSelected = () => {
 
 const disableButton = () => {
     clearButton.addEventListener('mouseover', (event) => {
-    let messageBox = document.getElementById("messageBoard");
-    if(messageBox.children.length < 1) {
-        clearButton.disabled = true;
-    }
-  });
+        let messageBox = document.getElementById("messageBoard");
+        if (messageBox.childNodes.length < 1) {
+            clearButton.disabled = true;
+        }
+    });
 };
 
 
@@ -152,7 +145,9 @@ const InitializeEventListeners = () => {
 const EnforceMessageLimit = () => {
     let MessageLimit = parseInt(document.getElementById("message-limit").innerText);
     if (isNaN(MessageLimit)) {
+        console.log(typeof MessageLimit);
         MessageLimit = 20;
+        console.log(typeof MessageLimit);
     }
     let Messages = document.getElementById("messageBoard").childNodes;
     dom(Backlog.GetBacklog(MessageLimit));
@@ -178,14 +173,14 @@ const EnforceMessageLimit = () => {
 // };
 
 const clearEvent = () => {
-	clearButton.addEventListener("click", clearMessages);
+    clearButton.addEventListener("click", clearMessages);
 };
 
 const clearMessages = (e) => {
-	let messageBoard = document.getElementById("messageBoard");
-	Backlog.ClearBacklog();
-	EnforceMessageLimit();
-	messageBoard.innerHTML = "";
+    let messageBoard = document.getElementById("messageBoard");
+    Backlog.ClearBacklog();
+    EnforceMessageLimit();
+    messageBoard.innerHTML = "";
 };
 
 
