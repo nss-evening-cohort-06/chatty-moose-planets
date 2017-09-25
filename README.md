@@ -4,7 +4,7 @@
 
 #### Screenshot Gif
 
-![demo](https://user-images.githubusercontent.com/30091921/30835704-2f04e636-a21f-11e7-8536-c1cad7a057df.gif (727kB)
+![demo](https://user-images.githubusercontent.com/30091921/30835704-2f04e636-a21f-11e7-8536-c1cad7a057df.gif) (727kB)
 
 #### Contributers
 * Matt Hensley [GitHub](https://github.com/Matthensley777)
