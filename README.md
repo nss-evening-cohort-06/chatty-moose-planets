@@ -1,6 +1,6 @@
 # Chatty Moose
 
-## Group Calibration project 
+## Group project 
 
 #### Screenshot Gif
 
